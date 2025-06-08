@@ -7,7 +7,7 @@
     "dev": "nodemon src/server.ts",
     "build": "tsc",
     "start": "npm run build && node dist/server.js",
-    "seed": "node dist/seed.js"
+    "seed": "dotenv -e .env -- node dist/seed.js"
   },
   "dependencies": {
     "@prisma/client": "^6.9.0",
@@ -24,6 +24,7 @@
     "@types/express": "^4.17.21",
     "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "^20.5.6",
+    "dotenv-cli": "^8.0.0",
     "nodemon": "^3.0.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.2.2"

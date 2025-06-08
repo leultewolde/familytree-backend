@@ -15,9 +15,13 @@ model User {
 }
 
 model Person {
-  id       String  @id @default(uuid())
-  name     String
-  relation String
-  addedBy  User    @relation(fields: [addedById], references: [id])
+  id        String   @id @default(uuid())
+  name      String
+  relation  String
+  pin       String?  // added PIN
+  email     String?  @unique
+  password  String?  // hashed
+  registered Boolean @default(false)
+  addedBy   User     @relation(fields: [addedById], references: [id])
   addedById String
 }
