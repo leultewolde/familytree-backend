@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon src/server.ts",
-    "build": "tsc",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc",
     "start": "npm run build && node dist/server.js",
     "seed": "dotenv -e .env -- node dist/seed.js"
   },
