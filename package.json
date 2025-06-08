@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon src/server.ts",
     "clean": "rm -rf dist",
-    "build": "npm run clean && tsc",
+    "db:push": "npx prisma db push",
+    "build": "npm run clean && npm run db:push && tsc",
     "start": "npm run build && node dist/server.js",
     "seed": "dotenv -e .env -- node dist/seed.js"
   },
